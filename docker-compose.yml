@@ -1,0 +1,12 @@
+# Discord Bot
+version: '3.4'
+services:
+  discordbot:
+    image: bwadaz/discordbot:latest
+    container_name: DiscordBot
+    network_mode: host
+    environment:
+      - DISCORD_TOKEN=<DISCORD_TOKEN>
+      - CLIENT_ID=<CLIENT_ID>
+      - GUILD_ID=<GUILD_ID>
+    restart: unless-stopped

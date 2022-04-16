@@ -28,10 +28,10 @@ Update the image - `docker push bwadaz/discordbot:latest`
 ## TODO
 
 - [x] Create dockerfile
-- [ ] Create docker-compose
+- [x] Create docker-compose
+- [ ] Add 'See requests' command
 - [ ] Add 'Add request' command
 - [ ] Add 'Complete request' command
-- [ ] Add 'See requests' command
 - [ ] Intergrate with Radarr?
   - [ ] Add direct to Radarr
   - [ ] Show current missing list
