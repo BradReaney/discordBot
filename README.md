@@ -29,6 +29,10 @@ Update the image - `docker push bwadaz/discordbot:latest`
 
 - [x] Create dockerfile
 - [x] Create docker-compose
+- [x] Add DB for requests
+- [ ] Create query helper 'Stuck here. Need to run a way to return results from nested functions'
+- [ ] Check if request table is there
+  - [ ] if not then create
 - [ ] Add 'See requests' command
 - [ ] Add 'Add request' command
 - [ ] Add 'Complete request' command

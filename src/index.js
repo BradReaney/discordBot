@@ -22,6 +22,9 @@ client.on('interactionCreate', async interaction => {
 	case 'user':
 		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
 		break;
+	case 'sql':
+		await interaction.reply('Yeah this don\'t work yet. Thanks for reminding me...');
+		break;
 	}
 });
 
