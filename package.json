@@ -4,7 +4,8 @@
   "description": "Discord bot for the Plex discord server.",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/deploy-commands.js && node src/app.js"
+    "start": "node src/deploy-commands.js && node src/app.js",
+    "addCommands": "node src/deploy-commands.js"
   },
   "keywords": [
     "Discord",
@@ -23,5 +24,13 @@
   },
   "devDependencies": {
     "eslint": "^8.13.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BradReaney/discordBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BradReaney/discordBot/issues"
+  },
+  "homepage": "https://github.com/BradReaney/discordBot#readme"
 }
