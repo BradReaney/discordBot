@@ -32,6 +32,13 @@ const commands = [
 			option.setName('name')
 				.setDescription('Enter the name of the film or TV show')
 				.setRequired(true)),
+	new SlashCommandBuilder()
+		.setName('help')
+		.setDescription('Request help for an issue with Plex')
+		.addStringOption(option =>
+			option.setName('description')
+				.setDescription('Enter the problem you\'re having')
+				.setRequired(true)),
 ]
 	.map(command => command.toJSON());
 

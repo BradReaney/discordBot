@@ -40,6 +40,8 @@ Push the image - `docker push bwadaz/discordbot:latest`
 - [x] Intergrate Discord JS
 - [x] Create 'Add Request' command
 - [x] Manage roles for new users
+- [x] Add a help request
+- [x] Create embed for help request
 - [x] Create dockerfile
 - [x] Create docker-compose
 
