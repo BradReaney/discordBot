@@ -9,8 +9,14 @@
     - DISCORD_TOKEN=""
     - CLIENT_ID=""
     - GUILD_ID=""
+    - MYSQL_USERNAME=""
+    - MYSQL_PASSWORD=""
+    - TAUTULLI_IP=""
+    - TAUTULLI_PORT=""
+    - TAUTULLI_API_KEY=""
 
 Install dependencies - `npm install`
+
 Run bot - `npm start`
 
 ### Prerequasits for running in a docker container
@@ -23,7 +29,7 @@ Run the image - ```docker run -e DISCORD_TOKEN=discordToken \
                 -d \
                 --name discordbot bwadaz/discordbot```
 
-Update the image - `docker push bwadaz/discordbot:latest`
+Push the image - `docker push bwadaz/discordbot:latest`
 
 ## TODO
 
@@ -41,3 +47,4 @@ Update the image - `docker push bwadaz/discordbot:latest`
   - [ ] Show current missing list
 - [x] Intergrate with Tautulli?
   - [ ] Return user stats - 'Can return the start. Just need to parse them to the chat'
+- [ ] Handle roles
