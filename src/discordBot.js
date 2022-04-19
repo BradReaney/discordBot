@@ -31,7 +31,7 @@ client.on('interactionCreate', async interaction => {
 			await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
 			break;
 		case 'request':
-			await interaction.reply(`Thanks ${interaction.user.username}!\n Brad will let you know if he can get ${interaction.options.getString('name')} when he's had a look.`);
+			await interaction.reply(`Thanks ${interaction.user.username}!\nBrad will let you know if he can get ${interaction.options.getString('name')} when he's had a look.`);
 			break;
 	}
 });
