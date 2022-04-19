@@ -2,9 +2,9 @@
   "name": "discordbot",
   "version": "1.0.0",
   "description": "Discord bot for the Plex discord server.",
-  "main": "src/app.js",
+  "main": "src/discordBot.js",
   "scripts": {
-    "start": "node src/deploy-commands.js && node src/app.js",
+    "start": "node src/deploy-commands.js && node src/discordBot.js",
     "addCommands": "node src/deploy-commands.js"
   },
   "keywords": [

@@ -26,11 +26,8 @@ Build the image - `docker build . -t bwadaz/discordbot`
 Run the image - ```docker run -e DISCORD_TOKEN= \
                 -e CLIENT_ID= \
                 -e GUILD_ID= \
-                -e MYSQL_USERNAME= \
-                -e MYSQL_PASSWORD= \
-                -e TAUTULLI_IP= \
-                -e TAUTULLI_PORT= \
-                -e TAUTULLI_API_KEY= \
+                -e BRADS_DISCORD_USER_ID= \
+                -e PLEX_USERS_ROLE_ID= \
                 -d \
                 --name discordbot bwadaz/discordbot```
 
@@ -42,7 +39,7 @@ Push the image - `docker push bwadaz/discordbot:latest`
 
 - [x] Intergrate Discord JS
 - [x] Create 'Add Request' command
-- [ ] Manage roles for new users
+- [x] Manage roles for new users
 - [x] Create dockerfile
 - [x] Create docker-compose
 

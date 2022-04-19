@@ -1,26 +1,14 @@
 # Discord Bot & mySQL DB
 version: '3.4'
 services:
-  db:
-    image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_HOST: 'localhost'
-      MYSQL_DATABASE: 'PlexRequests'
-      MYSQL_ROOT_PASSWORD: 'password01'
-    volumes:
-      - /Users/brad/Desktop/DBTest:/var/lib/mysql # Fix this
-    ports:
-      - 3306:3306
-
   discordbot:
     image: bwadaz/discordbot:latest
     container_name: DiscordBot
     network_mode: host
-    depends_on: db
     environment:
       - DISCORD_TOKEN=<DISCORD_TOKEN>
       - CLIENT_ID=<CLIENT_ID>
       - GUILD_ID=<GUILD_ID>
+      - BRADS_DISCORD_USER_ID=<BRADS_DISCORD_USER_ID>
+      - PLEX_USERS_ROLE_ID=<BRADS_DISCORD_USER_ID>
     restart: unless-stopped
