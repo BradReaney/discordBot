@@ -1,4 +1,4 @@
-# Discord Bot & mySQL DB
+# Discord Bot
 version: '3.4'
 services:
   discordbot:
