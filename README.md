@@ -41,7 +41,7 @@ Push the image - `docker push bwadaz/discordbot:latest`
 - [x] Create dockerfile
 - [x] Create docker-compose
 - [x] Add DB for requests
-- [ ] Create query helper - 'Stuck here. Need to run a way to return results from nested functions'
+- [ ] Create query helper - 'Stuck here. Need to find a way to return results from nested functions'
 - [ ] Check if request table is there
   - [ ] if not then create
 - [ ] Add 'See requests' command
@@ -51,5 +51,5 @@ Push the image - `docker push bwadaz/discordbot:latest`
   - [ ] Add direct to Radarr
   - [ ] Show current missing list
 - [x] Intergrate with Tautulli?
-  - [ ] Return user stats - 'Can return the start. Just need to parse them to the chat'
+  - [ ] Return user stats - 'Can return the stats. Just need to parse them to the chat'
 - [ ] Handle roles
