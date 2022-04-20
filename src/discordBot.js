@@ -24,10 +24,10 @@ client.on('interactionCreate', async interaction => {
 	} = interaction;
 
 	switch (commandName) {
-		case 'ping':
-			console.log(`${now} - Ping command requested by ${interaction.user.username}`);
-			await interaction.reply('Pong!');
-			console.log(`${now} - Ping command sent`);
+		case 'youdead':
+			console.log(`${now} - Youdead command requested by ${interaction.user.username}`);
+			await interaction.reply('https://c.tenor.com/7edqB51nYtwAAAAC/get-him-to-the-greek-jonah-hill.gif');
+			console.log(`${now} - Youdead command replied too`);
 			break;
 		case 'request':
 			console.log(`${now} - Request command requested by ${interaction.user.username}`);
@@ -35,7 +35,7 @@ client.on('interactionCreate', async interaction => {
 				content: `Thanks, ${interaction.user.username}. Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
 				embeds: embedMessageHelper.mediaRequestEmbedCreator(interaction.options.getString('type'), interaction.options.getString('name'), interaction.user.username),
 			});
-			console.log(`${now} - Request command sent`);
+			console.log(`${now} - Request command replied too`);
 			break;
 		case 'help':
 			console.log(`${now} - Help command requested by ${interaction.user.username}`);
@@ -43,7 +43,7 @@ client.on('interactionCreate', async interaction => {
 				content: `Thanks, ${interaction.user.username}. Brad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
 				embeds: embedMessageHelper.helpRequestEmbedCreator(interaction.user.username, interaction.options.getString('description')),
 			});
-			console.log(`${now} - Help command sent`);
+			console.log(`${now} - Help command replied too`);
 			break;
 	}
 });

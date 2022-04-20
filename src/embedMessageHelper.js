@@ -4,7 +4,7 @@ const {
 
 class EmbedMessageHelper {
 	helpRequestEmbedCreator(name, description) {
-		const helpEmbedBody = new MessageEmbed()
+		const embedBody = new MessageEmbed()
 			.setColor('#f5a906')
 			.setTitle('Help Request Ticket Raised')
 			.addFields({
@@ -15,11 +15,11 @@ class EmbedMessageHelper {
 				value: description,
 			})
 			.setTimestamp();
-		return [helpEmbedBody];
+		return [embedBody];
 	}
 
 	mediaRequestEmbedCreator(media, itemRequested, name) {
-		const helpEmbedBody = new MessageEmbed()
+		const embedBody = new MessageEmbed()
 			.setColor('#f5a906')
 			.setTitle(`New ${media} Requested!`)
 			.addFields({
@@ -30,7 +30,7 @@ class EmbedMessageHelper {
 				value: name,
 			})
 			.setTimestamp();
-		return [helpEmbedBody];
+		return [embedBody];
 	}
 }
 

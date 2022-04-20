@@ -13,8 +13,8 @@ require('dotenv').config();
 
 const commands = [
 	new SlashCommandBuilder()
-		.setName('ping')
-		.setDescription('Replies with pong!'),
+		.setName('youdead')
+		.setDescription('Check if the Plex bot is running'),
 	new SlashCommandBuilder()
 		.setName('request')
 		.setDescription('Request a film or TV show')
