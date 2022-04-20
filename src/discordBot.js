@@ -3,8 +3,8 @@ require('dotenv').config();
 const {
 	Client,
 	Intents,
-	MessageEmbed,
 } = require('discord.js');
+const embedMessageHelper = require('../src/embedMessageHelper');
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS],
@@ -14,6 +14,10 @@ client.once('ready', () => {
 	console.log('Client ready');
 });
 
+// const d = new Date();
+// const now = d.toISOString().slice(0, 19).replace('T', ' ');
+const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
@@ -21,56 +25,34 @@ client.on('interactionCreate', async interaction => {
 		commandName,
 	} = interaction;
 
-	let helpEmbedMessage = [];
-
-	function helpEmbedCreator(name, description) {
-		const helpEmbedBody = new MessageEmbed()
-			.setColor('#f5a906')
-			.setTitle('Help Request Ticket Raised')
-			.addFields({
-				name: 'Raised By',
-				value: name,
-			}, {
-				name: 'Problem',
-				value: description,
-			})
-			.setTimestamp();
-		helpEmbedMessage = helpEmbedBody;
-	}
-
 	switch (commandName) {
 		case 'ping':
+			console.log(`${now} - Ping command requested by ${interaction.user.username}`);
 			await interaction.reply('Pong!');
-			console.log('Ping command sent');
-			break;
-		case 'server':
-			await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
-			console.log('Server command sent');
-			break;
-		case 'user':
-			await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
-			console.log('User command sent');
+			console.log(`${now} - Ping command sent`);
 			break;
 		case 'request':
-			await interaction.reply(`Thanks ${interaction.user.username}!\nBrad will let you know if he can get ${interaction.options.getString('name')} when he's had a look.`);
-			console.log('Request command sent');
+			console.log(`${now} - Request command requested by ${interaction.user.username}`);
+			await interaction.reply({
+				content: `Thanks ${interaction.user.username}, Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
+				embeds: embedMessageHelper.mediaRequestEmbedCreator(interaction.options.getString('type'), interaction.options.getString('name'), interaction.user.username),
+			});
+			console.log(`${now} - Request command sent`);
 			break;
 		case 'help':
-			helpEmbedCreator(interaction.user.username, interaction.options.getString('description'));
+			console.log(`${now} - Help command requested by ${interaction.user.username}`);
 			await interaction.reply({
-				embeds: [helpEmbedMessage],
+				content: `Thanks ${interaction.user.username}, Brad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
+				embeds: embedMessageHelper.helpRequestEmbedCreator(interaction.user.username, interaction.options.getString('description')),
 			});
-			console.log('Help command sent');
+			console.log(`${now} - Help command sent`);
 			break;
 	}
 });
 
-const bradsDiscordUserId = process.env.BRADS_DISCORD_USER_ID;
-const plexUsersRoleId = process.env.PLEX_USERS_ROLE_ID;
-
 client.on('guildMemberAdd', (member) => {
-	if (!member.id === bradsDiscordUserId | member.user.bot === 0) {
-		member.roles.add(plexUsersRoleId);
+	if (!member.id === process.env.BRADS_DISCORD_USER_ID | member.user.bot === 0) {
+		member.roles.add(process.env.PLEX_USERS_ROLE_ID);
 	}
 });
 

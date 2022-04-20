@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 require('dotenv').config();
 const mysql = require('mysql');
 
