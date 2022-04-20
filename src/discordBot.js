@@ -65,18 +65,11 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.on('guildMemberAdd', guildMember => {
-	const userRole = guildMember.guild.roles.cache.find(role => role.name === 'Plex Users');
-	if (guildMember.user.bot === 0 | !guildMember.user.id === '689407148484067378') {
-		guildMember.roles.add(userRole);
-	}
-});
-
 const bradsDiscordUserId = process.env.BRADS_DISCORD_USER_ID;
 const plexUsersRoleId = process.env.PLEX_USERS_ROLE_ID;
 
 client.on('guildMemberAdd', (member) => {
-	if (member.id !== bradsDiscordUserId | member.user.bot !== 0) {
+	if (!member.id === bradsDiscordUserId | member.user.bot === 0) {
 		member.roles.add(plexUsersRoleId);
 	}
 });
