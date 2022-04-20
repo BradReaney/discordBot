@@ -14,8 +14,6 @@ client.once('ready', () => {
 	console.log('Client ready');
 });
 
-// const d = new Date();
-// const now = d.toISOString().slice(0, 19).replace('T', ' ');
 const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
 client.on('interactionCreate', async interaction => {
