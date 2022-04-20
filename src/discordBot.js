@@ -32,7 +32,7 @@ client.on('interactionCreate', async interaction => {
 		case 'request':
 			console.log(`${now} - Request command requested by ${interaction.user.username}`);
 			await interaction.reply({
-				content: `Thanks ${interaction.user.username}, Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
+				content: `Thanks, ${interaction.user.username}. Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
 				embeds: embedMessageHelper.mediaRequestEmbedCreator(interaction.options.getString('type'), interaction.options.getString('name'), interaction.user.username),
 			});
 			console.log(`${now} - Request command sent`);
@@ -40,7 +40,7 @@ client.on('interactionCreate', async interaction => {
 		case 'help':
 			console.log(`${now} - Help command requested by ${interaction.user.username}`);
 			await interaction.reply({
-				content: `Thanks ${interaction.user.username}, Brad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
+				content: `Thanks, ${interaction.user.username}. Brad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
 				embeds: embedMessageHelper.helpRequestEmbedCreator(interaction.user.username, interaction.options.getString('description')),
 			});
 			console.log(`${now} - Help command sent`);
