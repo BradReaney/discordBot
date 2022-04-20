@@ -40,7 +40,7 @@ client.on('interactionCreate', async interaction => {
 		case 'help':
 			console.log(`${now} - Help command requested by ${interaction.user.username}`);
 			await interaction.reply({
-				content: `Thanks, ${interaction.user.username}. Brad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
+				content: `Thanks, ${interaction.user.username}.\nBrad will let you know when he's take a look.\nPeace and Love,\n**Plex Bot**`,
 				embeds: embedMessageHelper.helpRequestEmbedCreator(interaction.user.username, interaction.options.getString('description')),
 			});
 			console.log(`${now} - Help command replied too`);

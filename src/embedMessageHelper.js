@@ -14,6 +14,7 @@ class EmbedMessageHelper {
 				name: 'Problem',
 				value: description,
 			})
+			.setImage('https://c.tenor.com/HYBKG4ZNb5AAAAAM/everything-is-fine-itsfine.gif')
 			.setTimestamp();
 		return [embedBody];
 	}
