@@ -1,6 +1,9 @@
 const {
 	MessageEmbed,
 } = require('discord.js');
+const {
+	gifs,
+} = require('./gifHelper');
 
 class EmbedMessageHelper {
 	helpRequestEmbedCreator(name, description) {
@@ -14,7 +17,7 @@ class EmbedMessageHelper {
 				name: 'Problem',
 				value: description,
 			})
-			.setImage('https://c.tenor.com/HYBKG4ZNb5AAAAAM/everything-is-fine-itsfine.gif')
+			.setImage(gifs('itsFine'))
 			.setTimestamp();
 		return [embedBody];
 	}
