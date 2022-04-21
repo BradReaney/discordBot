@@ -55,6 +55,7 @@ client.on('interactionCreate', async interaction => {
 client.on('guildMemberAdd', (member) => {
 	if (!member.id === process.env.BRADS_DISCORD_USER_ID | member.user.bot === 0) {
 		member.roles.add(process.env.PLEX_USERS_ROLE_ID);
+		console.log(`${member.displayName} was given the 'Plex Users' role.`);
 	}
 });
 
