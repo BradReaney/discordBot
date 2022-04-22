@@ -68,7 +68,10 @@ client.on('interactionCreate', async interaction => {
 			try {
 				await interaction.member.roles.add(role('plexUsers'));
 				console.log(`${getDateTime()} - Plex users role given to ${interaction.user.username}`);
-				await interaction.reply(`Welcome to the server ${interaction.user.username}!\n${gifs('officeParty')}`);
+				await interaction.reply({
+					content: `Welcome to the server ${interaction.user.username}!\n${gifs('officeParty')}`,
+					ephemeral: true,
+				});
 				console.log(`${getDateTime()} - Letsgo command replied too`);
 				break;
 			} catch (err) {
