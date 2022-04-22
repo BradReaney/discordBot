@@ -32,14 +32,14 @@ client.on('interactionCreate', async interaction => {
 				console.log(`${getDateTime()} - Error with the 'youdead' command. Error: ${err}`);
 				break;
 			}
-		// Request command
+			// Request command
 		case 'request':
 			console.log(`${getDateTime()} - Request command requested by ${interaction.user.username}`);
 			try {
 				await interaction.reply({
-						content: `Thanks, ${interaction.user.username}. Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
-						embeds: mediaRequestEmbedCreator(interaction.options.getString('type'), interaction.options.getString('name'), interaction.user.username),
-					});
+					content: `Thanks, ${interaction.user.username}. Brad will let you know if he can get that.\nPeace and Love,\n**Plex Bot**`,
+					embeds: mediaRequestEmbedCreator(interaction.options.getString('type'), interaction.options.getString('name'), interaction.user.username),
+				});
 				console.log(`${getDateTime()} - Request command replied too`);
 				break;
 			} catch (err) {
@@ -68,10 +68,7 @@ client.on('interactionCreate', async interaction => {
 			try {
 				await interaction.member.roles.add(role('plexUsers'));
 				console.log(`${getDateTime()} - Plex users role given to ${interaction.user.username}`);
-				await interaction.reply({
-					content: `Welcome to the server ${interaction.user.username}!\n${gifs('officeParty')}`,
-					ephemeral: true,
-				});
+				await interaction.reply(`Welcome to the server ${interaction.user.username}!\n${gifs('officeParty')}`);
 				console.log(`${getDateTime()} - Letsgo command replied too`);
 				break;
 			} catch (err) {

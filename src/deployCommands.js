@@ -10,7 +10,6 @@ const commands = [
 		new SlashCommandBuilder()
 		.setName('youdead')
 		.setDescription('Check if the Plex bot is running'),
-
 		new SlashCommandBuilder()
 		.setName('request')
 		.setDescription('Request a film or TV show')
@@ -24,7 +23,6 @@ const commands = [
 			option.setName('name')
 			.setDescription('Enter the name of the film or TV show')
 			.setRequired(true)),
-
 		new SlashCommandBuilder()
 		.setName('help')
 		.setDescription('Request help for an issue with Plex')
@@ -32,7 +30,6 @@ const commands = [
 			option.setName('description')
 			.setDescription('Enter the problem you\'re having')
 			.setRequired(true)),
-
 		new SlashCommandBuilder()
 		.setName('letsgo')
 		.setDescription('Gives you access to the rest of the server'),
