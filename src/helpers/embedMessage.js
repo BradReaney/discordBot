@@ -1,9 +1,6 @@
-const {
-	MessageEmbed,
-} = require('discord.js');
-const {
-	gifs,
-} = require('./gifHelper');
+const { MessageEmbed } = require('discord.js');
+const { gifs } = require('./gifs');
+
 
 class EmbedMessageHelper {
 	helpRequestEmbedCreator(name, description) {
