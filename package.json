@@ -15,7 +15,7 @@
   "author": "Brad Reaney",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/builders": "^0.12.0",
+    "@discordjs/builders": "^0.16.0",
     "@discordjs/rest": "^0.3.0",
     "axios": "^0.26.1",
     "discord-api-types": "^0.37.21",
