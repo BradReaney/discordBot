@@ -21,7 +21,8 @@ Run bot - `npm start`
 
 ### Prerequasits for running in a docker container
 
-Build the image - `docker build . -t bwadaz/discordbot`
+Build the image on x64 - `docker build . -t bwadaz/discordbot`
+Build & push the image on M1 > x86 - `docker buildx build --platform linux/amd64,linux/arm64 --push -t bwadaz/discordbot .`
 
 Run the image - ```docker run -e DISCORD_TOKEN= \
                 -e CLIENT_ID= \

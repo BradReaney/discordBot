@@ -1,6 +1,6 @@
 /* eslint-disable brace-style */
 /* eslint-disable indent */
-const { Client, Intents } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const { gifs } = require('./helpers/gifs');
 const { getDateTime } = require('./helpers/helper');
 const { helpRequestEmbedCreator, mediaRequestEmbedCreator } = require('./helpers/embedMessage');
@@ -8,7 +8,7 @@ const { role } = require('./helpers/roles');
 
 require('dotenv').config();
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.once('ready', () => {
 	console.log(`${getDateTime()} - Plex bot ready`);

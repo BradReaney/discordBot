@@ -17,8 +17,14 @@ const commands = [
 			option.setName('type')
 			.setDescription('Do you want a film or TV show?')
 			.setRequired(true)
-			.addChoice('Film', 'Film')
-			.addChoice('TV', 'TV'))
+			.addChoices({
+				name: 'Film',
+				value: 'film',
+			})
+			.addChoices({
+				name: 'TV',
+				value: 'TV',
+			}))
 		.addStringOption(option =>
 			option.setName('name')
 			.setDescription('Enter the name of the film or TV show')
