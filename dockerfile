@@ -1,4 +1,4 @@
-FROM node:20.4.0-slim
+FROM node:20.7.0-slim
 
 RUN mkdir -p /usr/src/app
 
