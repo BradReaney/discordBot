@@ -1,11 +1,11 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('@discordjs/builders');
 const { gifs } = require('./gifs');
 
 
 class EmbedMessageHelper {
 	helpRequestEmbedCreator(name, description) {
-		const embedBody = new MessageEmbed()
-			.setColor('#f5a906')
+		const embedBody = new EmbedBuilder()
+			.setColor(0xf5a906)
 			.setTitle('Help Request Ticket Raised')
 			.addFields({
 				name: 'Raised By',
@@ -20,8 +20,8 @@ class EmbedMessageHelper {
 	}
 
 	mediaRequestEmbedCreator(media, itemRequested, name) {
-		const embedBody = new MessageEmbed()
-			.setColor('#f5a906')
+		const embedBody = new EmbedBuilder()
+			.setColor(0xf5a906)
 			.setTitle(`New ${media} Requested!`)
 			.addFields({
 				name: 'Item Requested',
