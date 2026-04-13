@@ -5,8 +5,8 @@
   "main": "src/discordBot.js",
   "scripts": {
     "start": "node src/deployCommands.js && node src/discordBot.js",
-    "addCommands": "node src/deploy-commands.js",
-    "local" : "nodemon src/discordBot.js"
+    "addCommands": "node src/deployCommands.js",
+    "local": "nodemon src/discordBot.js"
   },
   "keywords": [
     "Discord",
@@ -15,16 +15,16 @@
   "author": "Brad Reaney",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/rest": "^1.0.0",
-    "@discordjs/builders": "^1.0.0",
+    "@discordjs/builders": "^1.14.1",
+    "@discordjs/rest": "^2.6.1",
     "axios": "^1.15.0",
-    "discord-api-types": "^0.37.21",
-    "discord.js": "^14.19.0",
-    "dotenv": "^16.0.3",
-    "nodemon": "^3.0.1"
+    "discord-api-types": "^0.38.46",
+    "discord.js": "^14.26.2",
+    "dotenv": "^16.6.1",
+    "nodemon": "^3.1.14"
   },
   "devDependencies": {
-    "eslint": "^8.13.0"
+    "eslint": "^8.57.1"
   },
   "repository": {
     "type": "git",
