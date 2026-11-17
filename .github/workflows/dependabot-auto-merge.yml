@@ -1,4 +1,4 @@
-name: Dependabot auto-merge
+name: Bot PR auto-merge
 
 on:
   pull_request:
@@ -29,6 +29,20 @@ jobs:
               steps.metadata.outputs.update-type == 'null'
             )
           )
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  snyk:
+    runs-on: ubuntu-latest
+    # Snyk often opens PRs via a linked user account (not snyk-bot); branch names are reliable.
+    if: |
+      github.actor == 'snyk-bot' ||
+      startsWith(github.head_ref, 'snyk-fix-') ||
+      startsWith(github.head_ref, 'snyk-upgrade-')
+    steps:
+      - name: Enable auto-merge
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
