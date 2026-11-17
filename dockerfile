@@ -1,4 +1,4 @@
-FROM node:20.20.2-alpine3.22
+FROM node:25.9.0-alpine3.22
 
 RUN mkdir -p /usr/src/app
 
